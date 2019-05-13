@@ -15,7 +15,7 @@ export default class App extends Component {
   componentDidMount() {
     try {
       const URL =
-        "https://www.swiggy.com/?utm_source=RMZ&utm_campaign=RMZ&platform=RMZ&token=61B667C88FB270F558FB9254F94A2D73";
+        "https://www.swiggy.com/";
       const X_PLATFORM_COOKIE = "";
       /**
        * OpenApp.startSwiggy(url, x-platform-cookie)
