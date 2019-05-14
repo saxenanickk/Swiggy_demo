@@ -14,8 +14,12 @@ const OpenApp = Platform.OS === "android" ? NativeModules.OpenApp : undefined;
 export default class App extends Component {
   componentDidMount() {
     try {
-      const URL =
-        "https://www.swiggy.com/";
+      const UTM_SOURCE = "RMZ";
+      const UTM_CAMPAIGN = "RMZ";
+      const PLATFORM = "RMZ";
+      const TOKEN = "";
+
+      const URL = `https://www.swiggy.com/?utm_source=${UTM_SOURCE}&utm_campaign=${UTM_CAMPAIGN}&platform=${PLATFORM}&token=${TOKEN}`;
       const X_PLATFORM_COOKIE = "";
       /**
        * OpenApp.startSwiggy(url, x-platform-cookie)
