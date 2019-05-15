@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -11,6 +12,8 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import java.util.HashMap;
+
+import static android.webkit.WebView.setWebContentsDebuggingEnabled;
 
 public class SwiggyActivity extends AppCompatActivity {
 
@@ -29,6 +32,7 @@ public class SwiggyActivity extends AppCompatActivity {
         myWebView.addJavascriptInterface(new WebAppInterface(this), "NativeApp");
         WebSettings webSetting = myWebView.getSettings();
         webSetting.setJavaScriptEnabled(true);
+        setWebContentsDebuggingEnabled(true);
 
         myWebView.loadUrl(getIntent().getStringExtra("url"), hashMap);
     }
@@ -53,11 +57,14 @@ public class SwiggyActivity extends AppCompatActivity {
         @JavascriptInterface
         @SuppressWarnings("unused")
         public void setCookie(String cookie) {
+            Log.d("SET COOKIE", cookie);
             Toast.makeText(mContext, "Cookie: " + cookie, Toast.LENGTH_LONG).show();
         }
 
         @JavascriptInterface @SuppressWarnings("unused")
         public void fireEvent(String event, String order_id) {
+            Log.d("EVENT", event);
+            Log.d("ORDER ID", order_id);
             Toast.makeText(mContext, event + " " + order_id, Toast.LENGTH_LONG).show();
         }
     }
