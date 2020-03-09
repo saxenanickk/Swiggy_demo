@@ -17,9 +17,9 @@ export default class App extends Component {
       const UTM_SOURCE = "RMZ";
       const UTM_CAMPAIGN = "RMZ";
       const PLATFORM = "RMZ";
-      const TOKEN = "";
+      const TOKEN = "61B667C88FB270F558FB9254F94A2D73";
 
-      const URL = `https://www.swiggy.com/?utm_source=${UTM_SOURCE}&utm_campaign=${UTM_CAMPAIGN}&platform=${PLATFORM}&token=${TOKEN}`;
+      const URL = `https://www.swiggy.com/?platform=${PLATFORM}&token=${TOKEN}`;
       const X_PLATFORM_COOKIE = "";
       /**
        * OpenApp.startSwiggy(url, x-platform-cookie)
